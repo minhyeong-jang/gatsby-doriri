@@ -70,7 +70,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JaeYeopHan/gatsby-starter-bee.git"
+    "url": "git+https://github.com/minhyeong-jang/doriri.git"
   },
   "scripts": {
     "post": "node ./cli/create-new-post.js",
@@ -82,6 +82,6 @@
     "build": "gatsby build",
     "lh": "lighthousebot",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js",
-    "deploy": "gatsby build && gh-pages -d public -b gh-pages"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   }
 }

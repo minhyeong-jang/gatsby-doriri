@@ -5,7 +5,7 @@ ghpages.publish(
   'public',
   {
     branch: 'master',
-    repo: 'https://github.com/minhyeong-jang/doriri.github.io.git',
+    repo: 'https://github.com/minhyeong-jang/doriri.git',
   },
   () => {
     console.log('Deploy Complete!')
