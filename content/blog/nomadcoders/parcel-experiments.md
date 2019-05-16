@@ -210,7 +210,7 @@ export default typography
 
 **index.js**
 
-```js{1}
+```js
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './src/App'
