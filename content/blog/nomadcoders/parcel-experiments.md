@@ -1,11 +1,11 @@
 ---
 title: Parcel 30분 마스터하기
-date: 2019-5-14 17:27:13
+date: 2019-5-16 17:27:13
 category: 'nomadcoders'
 ---
 
 > Github : [parcel-experiments](https://github.com/minhyeong-jang/parcel-experiments)  
-> Lecture : [nomadcoders](https://academy.nomadcoders.co/p/learn-parcel)
+> Reference : [nomadcoders](https://academy.nomadcoders.co/p/learn-parcel)
 
 ### Feature
 
@@ -236,3 +236,9 @@ export default () => (
 ### 3.3 확인
 
 h1, p 태그에 headerFontFamily 및 bodyFontFamily 이 적용된 것을 확인할 수 있다.
+
+## 4. 후기
+
+Parcel에 관하여 배우는 강의이지만, 워낙 설정이 쉽다보니 시간이 소요된 부분은 없었다.
+오히려 Typography를 사용하여 폰트를 정의하는 부분에 더 흥미가 생겼다.
+현재 사용하고 있는 gatsby 블로그에도 Typography가 적용되어 있는데 내부 코드를 확인하면서 강의를 들으니 이해가 더 잘 되었다.

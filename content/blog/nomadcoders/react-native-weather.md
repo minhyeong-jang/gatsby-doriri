@@ -5,7 +5,7 @@ category: nomadcoders
 ---
 
 > Github : [react-native-weather](https://github.com/minhyeong-jang/react-native-weather)  
-> Lecture : [nomadcoders](https://academy.nomadcoders.co/p/fucking-react-native-apps?ref=map)
+> Reference : [nomadcoders](https://academy.nomadcoders.co/p/fucking-react-native-apps?ref=map)
 
 ## 1. React Native & Expo 특징
 
@@ -68,15 +68,95 @@ Expo 로컬 홈페이지가 열리면 Run simulator 또는 모바일에서 Expo 
 - Hot Reloading : 변경 사항 새로고침
 - Debug Remote JS : 인터넷 브라우저에서 디버깅
 
-### 학습 한 모듈
+## 2. 중요 코드
 
-```js
-import { LinearGradient } from 'expo'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
+전체 소스코드 [Github](https://github.com/minhyeong-jang/react-native-weather) 참고
+
+> 미포함 코드 `PropTypes, Error handle, Loading, StyleSheet, StatusBar, Etc.`
+
+**App.js**
+
+- 플랫폼의 좌표로 openweathermap api를 호출한다.
+- 온도 및 날씨 이름을 Weather 컴포넌트로 전달한다.
+
+```jsx
+componentDidMount() {
+  navigator.geolocation.getCurrentPosition(
+    position => {
+      this.getWeather(position.coords.latitude, position.coords.longitude);
+    },
+    error => {
+      this.setState({ error });
+    }
+  );
+}
+getWeather = (lat, long) => {
+  fetch(
+    `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`
+  )
+    .then(res => res.json())
+    .then(json =>
+      this.setState({
+        temperature: json.main.temp,
+        name: json.weather[0].main
+      })
+    );
+};
+  render() {
+    return (
+      <Weather temp={Math.ceil(temperature - 273.15)} weatherName={name} />
+    );
+  }
+}
 ```
 
-### 수강 후기
+**Weather.js**
 
-처음 React Native를 공부했을 때는 React 경험이 없어서 어렵고 이해 안되는 부분이 많았다.  
+- expo 모듈을 사용한다.
+  - LinearGradient : 백그라운드 색상을 그라데이션으로 출력
+  - MaterialCommunityIcons : expo 에서 제공하는 아이콘
+
+```jsx
+import { LinearGradient } from "expo";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+const weatherCases = {
+  Rain: {
+    colors: ["#00C6FB", "#005BEA"],
+    title: "Raining like a MF",
+    subtitle: "For more info look outside",
+    icon: "weather-rainy"
+  },
+  ...
+};
+
+const Weather = ({ temp, weatherName }) => {
+  return (
+    <LinearGradient
+      colors={weatherCases[weatherName].colors}
+    >
+      <View>
+        <Text>
+          <MaterialCommunityIcons
+            color="white"
+            size={144}
+            name={weatherCases[weatherName].icon}
+          />
+        </Text>
+        <Text>{temp}º</Text>
+      </View>
+      <View>
+        <Text>{weatherCases[weatherName].title}</Text>
+        <Text>
+          {weatherCases[weatherName].subtitle}
+        </Text>
+      </View>
+    </LinearGradient>
+  );
+};
+```
+
+## 3. 후기
+
+처음 React Native를 공부했을 때는 React 경험이 없어서 어렵고 이해 안 되는 부분이 많았다.  
 지금이야 React 개발자가 되어 공부해보니 생각보다 쉽고 재미있었다.  
-다만, 기초적인 부분이기도하고 사용했던 LinearGradient, Vector-Icons 모듈처럼 여러 모듈의 존재여부를 모르는 부분이 React Native를 개발하면서 난관일 것이라고 생각한다.
+다만, 기초적인 부분이기도 하고 사용했던 LinearGradient, Vector-Icons 모듈처럼 여러 모듈의 존재 여부를 모르는 부분이 React Native를 개발하면서 난관일 것이라고 생각한다.
