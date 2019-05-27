@@ -71,7 +71,7 @@ npm install babel-preset-env babel-preset-react --dev
 
 **index.js**
 
-```js
+```jsx
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './src/App'
@@ -81,7 +81,7 @@ ReactDOM.render(<App />, document.getElementById('app'))
 
 **src/App.js**
 
-```js
+```jsx
 import React from 'react'
 
 export default () => <div>Hello World</div>
@@ -138,7 +138,7 @@ yarn add autoprefixer
 
 **src/App.js**
 
-```js
+```jsx
 import styles from "./styles.scss";
 ...
 export default () => <div className={styles.title}>Hello World</div>
@@ -210,7 +210,7 @@ export default typography
 
 **index.js**
 
-```js
+```jsx
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './src/App'
@@ -221,7 +221,7 @@ ReactDOM.render(<App />, document.getElementById('app'))
 
 **src/App.js**
 
-```js
+```jsx
 import React from 'react'
 import styles from './styles.scss'
 
