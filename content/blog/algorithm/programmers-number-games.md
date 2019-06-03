@@ -22,8 +22,8 @@ A 팀원들이 부여받은 수가 출전 순서대로 나열되어있는 배열
 
 제한사항
 
-> A와 B의 길이는 같습니다.
-> A와 B의 길이는 1 이상 100,000 이하입니다.
+> A와 B의 길이는 같습니다.  
+> A와 B의 길이는 1 이상 100,000 이하입니다.  
 > A와 B의 각 원소는 1 이상 1,000,000,000 이하의 자연수입니다.
 
 ### 1.2 해결방법
@@ -67,4 +67,4 @@ function solution(A, B) {
 
 ### Reference
 
-Programmers - 2018 Summer coding
+Programmers Level 3 - 2018 Summer coding

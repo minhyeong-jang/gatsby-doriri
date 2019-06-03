@@ -42,4 +42,4 @@ function solution(n) {
 
 ### Reference
 
-프로그래머스 코딩 테스트 Level 2
+Programmers Level 2 - 연습문제
