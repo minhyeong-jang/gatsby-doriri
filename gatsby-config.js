@@ -2,7 +2,7 @@ const metaConfig = require('./gatsby-meta-config')
 
 module.exports = {
   siteMetadata: metaConfig,
-  pathPrefix: '/doriri',
+  pathPrefix: '/gatsby-doriri',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,

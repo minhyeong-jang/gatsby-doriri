@@ -5,7 +5,7 @@ ghpages.publish(
   'public',
   {
     branch: 'master',
-    repo: 'https://github.com/minhyeong-jang/doriri.git',
+    repo: 'https://github.com/minhyeong-jang/gatsby-doriri.git',
   },
   () => {
     console.log('Deploy Complete!')
